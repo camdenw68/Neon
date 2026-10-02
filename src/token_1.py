@@ -1,5 +1,4 @@
 class Token:
-
     def __init__(self, token_type, lexeme, literal, line):
         self.token_type = token_type
         self.lexeme = lexeme
@@ -8,8 +7,4 @@ class Token:
 
     def __str__(self):
         return f"{self.token_type}, {self.lexeme}, {self.literal}, {self.line}"
-    
-    
-    
-
     

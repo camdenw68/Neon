@@ -9,6 +9,8 @@ class TokenType(Enum):
     SLASH = auto()
     # end ai generated
 
+    POWER = auto()
+
     AND = auto()
     OR = auto()
     NOT = auto()
@@ -24,12 +26,12 @@ class TokenType(Enum):
     DOT = auto()
 
     EQUAL = auto()
-    EQUALEQUAL = auto()
+    EQUAL_EQUAL = auto()
     NOT_EQUAL = auto()
     LESS = auto()
-    LESS_THAN = auto()
+    LESS_EQUAL = auto()
     GREATER = auto()
-    GREATER_THAN = auto()
+    GREATER_EQUAL = auto()
 
     IDENTIFIER = auto()
     STRING = auto()
@@ -37,13 +39,15 @@ class TokenType(Enum):
 
     IF = auto()
     ELSE = auto()
+    WHILE = auto()
+    FOR = auto()
     RETURN = auto()
+    TRY = auto()
+    CATCH = auto()
+    FINALLY = auto()
 
     TRUE = auto()
     FALSE = auto()
-
-    FOR = auto()
-    FINALLY = auto()
 
     I8 = auto()
     I16 = auto()
@@ -59,8 +63,4 @@ class TokenType(Enum):
     BOOL = auto()
     STRING_TYPE = auto()
 
-    TRY = auto()
-    CATCH = auto()
-
     EOF = auto()
-    
