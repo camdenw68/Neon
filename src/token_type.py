@@ -1,11 +1,13 @@
 from enum import Enum, auto
 
 class TokenType(Enum):
+    # ai generated for an example for everything else, following the same pattern.
     PLUS = auto()
     MINUS = auto()
     STAR = auto()
     MODULO = auto()
     SLASH = auto()
+    # end ai generated
 
     AND = auto()
     OR = auto()
