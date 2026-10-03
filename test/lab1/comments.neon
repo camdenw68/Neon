@@ -1,0 +1,7 @@
+// This entire line should be ignored.
+
+i32 health = 100; // This should also be ignored.
+
+
+// More comments.
+health = health - 10;

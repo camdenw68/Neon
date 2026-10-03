@@ -1,0 +1,2 @@
+i32 health = 100;
+health = health @ 20;

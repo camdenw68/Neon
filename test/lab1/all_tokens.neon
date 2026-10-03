@@ -1,0 +1,50 @@
+i8 tiny = 1;
+i16 small = 16;
+i32 health = 100;
+i64 large = 64000;
+
+u8 a = 8;
+u16 b = 16;
+u32 c = 32;
+u64 d = 64;
+
+bool alive = true;
+char grade = "A";
+string name = "Neon";
+
+health = health + 10;
+health = health - 10;
+health = health * 2;
+health = health / 2;
+health = health % 3;
+health = health ** 2;
+
+if (health >= 100 && alive == true) {
+    console.write("healthy");
+} else {
+    console.write("low");
+}
+
+if (health <= 0 || alive != true) {
+    console.write("dead");
+}
+
+for (i32 i = 0; i < 10; i = i + 1) {
+    console.write(i);
+}
+
+while (health > 0) {
+    health = health - 1;
+}
+
+try {
+    console.write("test");
+} catch {
+    console.write("error");
+} finally {
+    console.write("done");
+}
+
+return health;
+
+[1, 2, 3]

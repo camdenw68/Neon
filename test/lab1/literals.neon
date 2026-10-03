@@ -1,0 +1,8 @@
+i32 age = 21;
+i32 zero = 0;
+u64 large = 123456789;
+string language = "Neon";
+string message = "Hello world";
+player_score = 99.5;
+_privateValue = 42;
+player2 = 10;
