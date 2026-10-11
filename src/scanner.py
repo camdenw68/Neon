@@ -104,6 +104,7 @@ class Scanner:
             "finally": TokenType.FINALLY,
             "true": TokenType.TRUE,
             "false": TokenType.FALSE,
+            "null": TokenType.NULL,
             "i8": TokenType.I8,
             "i16": TokenType.I16,
             "i32": TokenType.I32,

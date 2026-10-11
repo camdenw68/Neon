@@ -5,7 +5,7 @@ class ASTPrinter:
     def print(self, expression):
         if isinstance(expression, Literal):
             if expression.value is None:
-                return "nil"
+                return "null"
             if expression.value is True:
                 return "true"
             if expression.value is False:

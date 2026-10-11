@@ -121,7 +121,7 @@ for name, value, expected in [
     ("String", "hello", "hello"),
     ("True", True, "true"),
     ("False", False, "false"),
-    ("Nil", None, "nil")
+    ("Nulll", None, "nulll")
 ]:
     check(
         "Literal " + name,

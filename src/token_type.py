@@ -48,6 +48,7 @@ class TokenType(Enum):
 
     TRUE = auto()
     FALSE = auto()
+    NULL = auto()
 
     I8 = auto()
     I16 = auto()

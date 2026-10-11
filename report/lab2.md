@@ -4,7 +4,7 @@
 For this lab, I continued working on my programming language, Neon. In Lab 1, I made a scanner that reads code and turns it into tokens. In Lab 2, I created an Abstract Syntax Tree (AST) and an AST printer. The AST stores expressions, and the printer shows how they are organized using parentheses.
 ## 2. Expression Grammar
 This is the grammar I used for Neon's expressions.
-```text
+
 expression  → logic_or ;
 logic_or   → logic_and ( "||" logic_and )* ;
 logic_and  → equality ( "&&" equality )* ;
@@ -13,9 +13,9 @@ comparison → term ( ( ">" | ">=" | "<" | "<=" ) term )* ;
 term       → factor ( ( "+" | "-" ) factor )* ;
 factor     → unary ( ( "*" | "/" | "%" ) unary )* ;
 unary      → ( "!" | "-" ) unary | primary ;
-primary    → NUMBER | STRING | "true" | "false" | "nil" | "(" expression ")" ;
-```
-Neon supports arithmetic (`+`, `-`, `*`, `/`, `%`), comparison (`<`, `>`, `<=`, `>=`), equality (`==`, `!=`), and logical (`&&`, `||`, `!`) operators. It also supports numbers, strings, booleans, and `nil`. Neon is similar to Lox, but it uses `&&` and `||` instead of `and` and `or`. Neon also supports `%` for modulo.
+primary    → NUMBER | STRING | "true" | "false" | "null" | "(" expression ")" ;
+
+Neon supports arithmetic (`+`, `-`, `*`, `/`, `%`), comparison (`<`, `>`, `<=`, `>=`), equality (`==`, `!=`), and logical (`&&`, `||`, `!`) operators. It also supports numbers, strings, booleans, and `null`. Neon is similar to Lox, but it uses `&&` and `||` instead of `and` and `or` It also uses `null` instead of `nil`. Neon also supports `%` for modulo.
 ## 3. AST Classes
 I created four classes in `expression.py`:
 - **Literal:** Stores a value like `5` or `true`.
@@ -77,7 +77,7 @@ AST used: `Literal(value)`
 | String | `hello` | PASS |
 | True | `true` | PASS |
 | False | `false` | PASS |
-| Nil | `nil` | PASS |
+| Null | `null` | PASS |
 ### Test 7: Nested Expressions
 AST:
 ```python
@@ -89,6 +89,6 @@ Result: PASS
 ### Test Summary
 I ran 22 tests, and all 22 passed. Every actual output matched the expected output.
 ## 6. Limitations
-The AST printer only prints expressions and does not calculate answers or read Neon source code directly. Expressions must be created manually because Neon does not have a parser yet. The printer supports `nil`, but scanner support for it has not been verified.
+The AST printer only prints expressions and does not calculate answers or read Neon source code directly. Expressions must be created manually because Neon does not have a parser yet. The printer supports `nulll`, but scanner support for it has not been verified.
 ## 7. Conclusion
 In this lab, I made an AST and a printer for Neon. I learned how expressions can be stored and printed using a tree structure. All 22 tests passed, and this will help when I add more features to Neon later.
