@@ -1,41 +1,66 @@
 import sys
-from src.scanner import Scanner
 
+from src.scanner import Scanner
+from src.parser_1 import Parser, ParseError
+from src.ast_printer import ASTPrinter
 
 def run(source):
     scanner = Scanner(source)
-    tokens = scanner.scan_tokens()
 
-    for token in tokens:
-        print(token)
+    try:
+        tokens = scanner.scan_tokens()
+
+        if scanner.had_error:
+            print("Scanning failed. Fix the lexical errors.")
+            return False
+
+        parser = Parser(tokens)
+        expression = parser.parse()
+
+        printer = ASTPrinter()
+        print(printer.print(expression))
+        return True
+
+    except ParseError as error:
+        print(error)
+        return False
+
+    except (ValueError, TypeError, IndexError) as error:
+        print(f"Invalid input: {error}")
+        return False
 
 
 def run_file(path):
     try:
-        with open(path, "r") as file:
+        with open(path, "r", encoding="utf-8") as file:
             source = file.read()
 
-        run(source)
+        if not run(source):
+            sys.exit(1)
 
-    except FileNotFoundError:
-        print(f"Error: Could not find file '{path}'.")
+    except OSError as error:
+        print(f"Error reading file '{path}': {error}")
         sys.exit(1)
 
 
 def run_prompt():
-    print("Neon Interactive Scanner")
+    print("Neon Interactive Parser")
     print("Type 'exit' to quit.")
 
     while True:
         try:
             source = input("> ")
 
-            if source == "exit":
+            if source.strip().lower() == "exit":
                 break
+
+            if not source.strip():
+                continue
 
             run(source)
 
-        except EOFError:
+        except (EOFError, KeyboardInterrupt):
+            print()
             break
 
 

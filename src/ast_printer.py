@@ -1,5 +1,4 @@
-
-from expression import Literal, Unary, Binary, Grouping
+from src.expression import Literal, Unary, Binary, Grouping, Variable
 
 class ASTPrinter:
     def print(self, expression):
@@ -30,6 +29,9 @@ class ASTPrinter:
                 "group",
                 expression.expression
             )
+
+        elif isinstance(expression, Variable):
+            return expression.name.lexeme
 
         else:
             raise ValueError("Unknown expression type")

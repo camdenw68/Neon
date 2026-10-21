@@ -19,3 +19,8 @@ class Binary:
 class Grouping:
     def __init__(self, expression):
         self.expression = expression
+
+class Variable:
+    def __init__(self, name):
+        self.name = name
+
